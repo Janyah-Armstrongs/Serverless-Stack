@@ -45,9 +45,9 @@ resource "aws_iam_role_policy" "dynamodb_access" {
 }
 
 # Lambda Function
-resource "aws_lambda_function" "global_serverless_function" {
+resource "aws_lambda_function" "serverless_stack_function" {
   filename         = "lambda.zip"
-  function_name    = "GlobalServerlessFunction"
+  function_name    = "ServerlessStackFunction"
   handler          = "lambda_function.lambda_handler"
   runtime          = "python3.9"
   role             = aws_iam_role.severless_api_lambda_role.arn
@@ -60,7 +60,7 @@ resource "aws_lambda_function" "global_serverless_function" {
 
 # Manually create CloudWatch Log Group
 resource "aws_cloudwatch_log_group" "lambda_log_group" {
-  name              = "/aws/lambda/GlobalServerlessFunction"
+  name              = "/aws/lambda/ServerlessStackFunction"
   retention_in_days = 7
 }
 
@@ -68,7 +68,7 @@ resource "aws_cloudwatch_log_group" "lambda_log_group" {
 resource "aws_lambda_permission" "apigw" {
   statement_id  = "AllowExecutionFromAPIGateway"
   action        = "lambda:InvokeFunction"
-  function_name = aws_lambda_function.global_serverless_function.function_name
+  function_name = aws_lambda_function.serverless_stack_function.function_name
   principal     = "apigateway.amazonaws.com"
   source_arn    = "${aws_apigatewayv2_api.http_api.execution_arn}/*/*"
 }
@@ -95,7 +95,7 @@ resource "aws_apigatewayv2_api" "http_api" {
 resource "aws_apigatewayv2_integration" "lambda_integration" {
   api_id                 = aws_apigatewayv2_api.http_api.id
   integration_type       = "AWS_PROXY"
-  integration_uri        = aws_lambda_function.global_serverless_function.invoke_arn
+  integration_uri        = aws_lambda_function.serverless_stack_function.invoke_arn
   integration_method     = "POST"
   payload_format_version = "2.0"
 }

@@ -1,5 +1,5 @@
 output "lambda_function_name" {
-  value = aws_lambda_function.global_serverless_function.function_name
+  value = aws_lambda_function.serverless_stack_function.function_name
 }
 
 output "dynamodb_table_name" {
