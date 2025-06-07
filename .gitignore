@@ -1,0 +1,12 @@
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.backup
+
+# AWS artifacts
+*.zip
+*.pem
+*.key
+
+# System files
+.DS_Store
