@@ -57,7 +57,7 @@ This API allows users to send JSON data to an endpoint. The data is then stored 
 2.5 **Before Package Lambda**
     ```bash
     touch zip_lambda.sh
-    ```
+    
 
 3. **Package Lambda**
    ```bash
