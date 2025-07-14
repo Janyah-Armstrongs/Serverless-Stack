@@ -47,7 +47,7 @@ This API allows users to send JSON data to an endpoint. The data is then stored 
 1. **Clone the Repo**
    ```bash
    git clone https://github.com/Janyahs-Armstrongs/Serverless-Stack.git
-   cd Global-Serverless-Stack
+   cd Serverless-Stack
    ```
 
 2. **Initialize Terraform**
