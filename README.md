@@ -46,7 +46,7 @@ This API allows users to send JSON data to an endpoint. The data is then stored 
 
 1. **Clone the Repo**
    ```bash
-   git clone git@github.com:Janyahs-Armstrongs/Serverless-Stack.git
+   git clone https://github.com/Janyahs-Armstrongs/Serverless-Stack.git
    cd Global-Serverless-Stack
    ```
 
