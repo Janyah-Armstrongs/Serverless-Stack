@@ -56,14 +56,8 @@ This API allows users to send JSON data to an endpoint. The data is then stored 
    ```
 2.5 **Before Package Lambda**
     ```bash
-# Create the Lambda function file
-echo "def handler(event, context):\n    return {\n        'statusCode': 200,\n        'body': 'Hello from Lambda!'\n    }" > lambda_function.py
-
-# Create the zip script
-echo -e "#!/bin/bash\nzip lambda.zip lambda_function.py" > zip_lambda.sh
-
-# Make the script executable
-chmod +x zip_lambda.sh
+    touch zip_lambda.sh
+    ```
 
 3. **Package Lambda**
    ```bash
