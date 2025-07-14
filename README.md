@@ -55,8 +55,9 @@ This API allows users to send JSON data to an endpoint. The data is then stored 
    terraform init
    ```
 2.5 **Before Package Lambda**
-    ```bash
+  ```bash
     touch zip_lambda.sh
+  ```
     
 
 3. **Package Lambda**
